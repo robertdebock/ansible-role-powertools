@@ -3,5 +3,5 @@
 # Ansible managed
 #
 repository:
-  description: Install and configure powertools on your system.
+  description: Enable powertools repository on your system.
   homepage: https://robertdebock.nl/

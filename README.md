@@ -6,7 +6,7 @@ powertools
 
 <a href="https://github.com/robertdebock/ansible-role-powertools/actions"><img src="https://github.com/robertdebock/ansible-role-powertools/workflows/GitHub%20Action/badge.svg"/></a>
 
-Install and configure powertools on your system.
+Enable powertools repository on your system.
 
 Example Playbook
 ----------------
