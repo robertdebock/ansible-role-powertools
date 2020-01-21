@@ -1,8 +1,5 @@
 ---
 # handlers file for powertools
-- name: restart powertools
-  service:
-    name: "{{ powertools_service }}"
-    state: restarted
-  when:
-    - ansible_virtualization_type != "docker"
+- name: yum update cache
+  yum:
+    update_cache: yes
