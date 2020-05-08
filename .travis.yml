@@ -14,7 +14,12 @@ env:
   global:
     namespace="robertdebock"
   matrix:
+    - image="amazonlinux" tag="1"
+    - image="centos" tag="7"
     - image="centos" tag="latest"
+    - image="fedora" tag="31"
+    - image="fedora" tag="latest"
+    - image="opensuse" tag="latest"
 
 cache:
   - pip
