@@ -2,9 +2,9 @@
 
 Enable powertools repository on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-powertools.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-powertools)|[![github](https://github.com/robertdebock/ansible-role-powertools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-powertools/actions)|[![quality](https://img.shields.io/ansible/quality/45983)](https://galaxy.ansible.com/robertdebock/powertools)|[![downloads](https://img.shields.io/ansible/role/d/45983)](https://galaxy.ansible.com/robertdebock/powertools)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-powertools.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-powertools)|[![github](https://github.com/robertdebock/ansible-role-powertools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-powertools/actions)|[![quality](https://img.shields.io/ansible/quality/45983)](https://galaxy.ansible.com/robertdebock/powertools)|[![downloads](https://img.shields.io/ansible/role/d/45983)](https://galaxy.ansible.com/robertdebock/powertools)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-powertools.svg)](https://github.com/robertdebock/ansible-role-powertools/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
