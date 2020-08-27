@@ -6,6 +6,7 @@
     section: PowerTools
     option: enabled
     value: "1"
+    mode: "0644"
   notify:
     - yum update cache
   when:
