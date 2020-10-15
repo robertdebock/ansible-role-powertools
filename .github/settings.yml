@@ -5,3 +5,4 @@
 repository:
   description: Enable powertools repository on your system.
   homepage: https://robertdebock.nl/
+  topics: powertools, ansible, molecule, tox, playbook, hacktoberfest
