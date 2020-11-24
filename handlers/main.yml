@@ -1,5 +1,6 @@
 ---
 # handlers file for powertools
+
 - name: yum update cache
   yum:
     update_cache: yes
