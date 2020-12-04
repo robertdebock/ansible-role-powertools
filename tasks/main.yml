@@ -1,5 +1,6 @@
 ---
 # tasks file for powertools
+
 - name: enable powertools
   ini_file:
     path: /etc/yum.repos.d/CentOS-PowerTools.repo
