@@ -9,3 +9,11 @@
       package:
         name: libpcap-devel
         state: present
+      notify:
+        - remove a powertools package
+
+  handlers:
+    - name: remove a powertools package
+      package:
+        name: libpcap-devel
+        state: absent
