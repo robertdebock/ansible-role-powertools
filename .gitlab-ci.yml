@@ -16,19 +16,7 @@ molecule:
   retry: 2
   parallel:
     matrix:
-      - image: "amazonlinux"
-        tag: "latest"
       - image: "centos"
-        tag: "7"
-      - image: "centos"
-        tag: "latest"
-      - image: "fedora"
-        tag: "32"
-      - image: "fedora"
-        tag: "latest"
-      - image: "fedora"
-        tag: "rawhide"
-      - image: "opensuse"
         tag: "latest"
 
 galaxy:

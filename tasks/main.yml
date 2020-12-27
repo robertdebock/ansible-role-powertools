@@ -11,5 +11,5 @@
   notify:
     - yum update cache
   when:
-    - ansible_distribution == "CentOS"
+    - ansible_distribution in [ "CentOS", "EL" ]
     - ansible_distribution_major_version >= "8"
