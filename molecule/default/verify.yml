@@ -6,7 +6,7 @@
 
   tasks:
     - name: install a powertools package
-      package:
+      ansible.builtin.package:
         name: libpcap-devel
         state: present
       notify:
@@ -14,6 +14,6 @@
 
   handlers:
     - name: remove a powertools package
-      package:
+      ansible.builtin.package:
         name: libpcap-devel
         state: absent
