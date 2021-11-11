@@ -4,9 +4,11 @@
 - name: Set repofile for CentOS
   set_fact:
     powertools_repo: /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
+  when: ansible_distribution in [ "CentOS", "EL"]
 - name: Set repofile for AlmaLinux
   set_fact:
     powertools_repo: /etc/yum.repos.d/almalinux-powertools.repo
+  when: ansible_distribution == "AlmaLinux"
 - name: enable powertools
   community.general.ini_file:
     path: "{{ powertools_repo }}"
