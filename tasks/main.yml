@@ -26,3 +26,16 @@
   when:
     - ansible_distribution in [ "Rocky" ]
     - ansible_distribution_major_version >= "8"
+
+- name: enable powertools (AlmaLinux)
+  community.general.ini_file:
+    path: /etc/yum.repos.d/almalinux-powertools.repo
+    section: powertools
+    option: enabled
+    value: "1"
+    mode: "0644"
+  notify:
+    - yum update cache
+  when:
+    - ansible_distribution in [ "AlmaLinux" ]
+    - ansible_distribution_major_version >= "8"
