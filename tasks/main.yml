@@ -1,9 +1,9 @@
 ---
 # tasks file for powertools
 
-- name: enable powertools (EL/CentOS)
+- name: enable powertools
   community.general.ini_file:
-    path: /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
+    path: "/etc/yum.repos.d/{{ powertools_repo_file[ansible_distribution] }}"
     section: powertools
     option: enabled
     value: "1"
@@ -11,31 +11,5 @@
   notify:
     - yum update cache
   when:
-    - ansible_distribution in [ "CentOS", "EL" ]
-    - ansible_distribution_major_version >= "8"
-
-- name: enable powertools (Rocky)
-  community.general.ini_file:
-    path: /etc/yum.repos.d/Rocky-PowerTools.repo
-    section: powertools
-    option: enabled
-    value: "1"
-    mode: "0644"
-  notify:
-    - yum update cache
-  when:
-    - ansible_distribution in [ "Rocky" ]
-    - ansible_distribution_major_version >= "8"
-
-- name: enable powertools (AlmaLinux)
-  community.general.ini_file:
-    path: /etc/yum.repos.d/almalinux-powertools.repo
-    section: powertools
-    option: enabled
-    value: "1"
-    mode: "0644"
-  notify:
-    - yum update cache
-  when:
-    - ansible_distribution in [ "AlmaLinux" ]
+    - ansible_distribution in [ "CentOS", "EL", "Rocky", "AlmaLinux" ]
     - ansible_distribution_major_version >= "8"
