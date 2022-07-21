@@ -2,8 +2,9 @@
 # vars file for powertools
 
 _powertools_repo_name:
-  RedHat: powertools
-  AlmaLinux_9: crb
+  RedHat: '{{ ansible_distribution }}-powertools'
+  AlmaLinux_8: almalinux-powertools
+  AlmaLinux_9: almalinux-crb
 
 powertools_repo_name: "{{  _powertools_repo_name[ansible_distribution ~ '_'~ ansible_distribution_major_version] | default(
                            _powertools_repo_name[ansible_distribution] ) | default(

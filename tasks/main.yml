@@ -3,7 +3,7 @@
 
 - name: enable powertools
   community.general.ini_file:
-    path: "/etc/yum.repo.d/{{ ansible_distribution }}-{{ powertools_repo_name }}.repo"
+    path: "/etc/yum.repos.d/{{ powertools_repo_name }}.repo"
     section: powertools
     option: enabled
     value: "1"
