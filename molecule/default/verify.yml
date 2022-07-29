@@ -7,7 +7,7 @@
   tasks:
     - name: install a powertools package
       ansible.builtin.package:
-        name: libpcap-devel
+        name: opencv
         state: present
       notify:
         - remove a powertools package
@@ -16,5 +16,5 @@
 
     - name: remove a powertools package
       ansible.builtin.package:
-        name: libpcap-devel
+        name: opencv
         state: absent
