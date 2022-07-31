@@ -7,7 +7,7 @@
   tasks:
     - name: install a powertools package
       ansible.builtin.package:
-        name: opencv
+        name: autotrace
         state: present
       notify:
         - remove a powertools package
@@ -17,4 +17,4 @@
     - name: remove a powertools package
       ansible.builtin.package:
         name: opencv
-        state: absent
+        state: autotrace
