@@ -10,7 +10,7 @@ powertools_repo_name: "{{ _powertools_repo_name[ansible_distribution ~ '_'~ ansi
                           _powertools_repo_name[ansible_os_family] ) }}"
 
 _powertools_repo_file:
-  RedHat: "{{ ansible_distribution }}-powertools.repo"
+  RedHat: "{{ ansible_distribution }}-PowerTools.repo"
   AlmaLinux_8: "almalinux-PowerTools.repo"
   AlmaLinux_9: "almalinux-crb.repo"
 
