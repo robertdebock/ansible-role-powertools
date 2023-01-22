@@ -13,8 +13,7 @@
         - remove a powertools package
 
   handlers:
-
     - name: remove a powertools package
       ansible.builtin.package:
         name: opencv
-        state: autotrace
+        state: absent
