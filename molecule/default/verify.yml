@@ -10,7 +10,7 @@
         name: autotrace
         state: present
       notify:
-        - remove a powertools package
+        - Remove a powertools package
 
   handlers:
     - name: Remove a powertools package
