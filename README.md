@@ -1,4 +1,4 @@
-# Ansible role [powertools](#powertools)
+# [Ansible role powertools](#powertools)
 
 Enable powertools repository on your system.
 
