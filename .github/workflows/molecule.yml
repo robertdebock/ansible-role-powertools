@@ -29,8 +29,24 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "enterpriselinux"
+          - namespace: robertdebock
+            image: "enterpriselinux"
             tag: "8"
+          - namespace: robertdebock
+            image: "enterpriselinux"
+            tag: "9"
+          - namespace: library
+            image: "rockylinux"
+            tag: "8"
+          - namespace: library
+            image: "rockylinux"
+            tag: "9"
+          - namespace: library
+            image: "almalinux"
+            tag: "8"
+          - namespace: library
+            image: "almalinux"
+            tag: "9"
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -43,5 +59,6 @@ jobs:
       - name: molecule
         uses: robertdebock/molecule-action@6.0.1
         with:
+          namespace: ${{ matrix.config.namespace }}
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}

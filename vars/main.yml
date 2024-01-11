@@ -1,21 +1,37 @@
 ---
 # vars file for powertools
 
+# NOTE: It could have been easier if we could check if 'X sorts after Y'
+# and just take the first Y that sorts after the current OS version
+_powertools_os_keys_internal:
+  - "{{ [[ansible_distribution, ansible_distribution_major_version]|join('_')]|
+        product(range(1, ((ansible_distribution_version|split('.'))[1]|int + 1)))|
+        map('join', '_')|
+        reverse }}"
+  - "{{ [ ansible_distribution, ansible_distribution_major_version ] | join('_') }}"
+  - "{{ ansible_distribution }}"
+  - "{{ ansible_os_family }}"
+_powertools_os_keys: "{{ _powertools_os_keys_internal|flatten }}"
+
 _powertools_repo_name:
   RedHat: powertools
   AlmaLinux_9: crb
+  Rocky_9: crb
 
-powertools_repo_name: "{{ _powertools_repo_name[ansible_distribution ~ '_' ~ ansible_distribution_major_version] | default(
-                          _powertools_repo_name[ansible_distribution] ) | default(
-                          _powertools_repo_name[ansible_os_family] ) }}"
+powertools_repo_name: "{{ _powertools_os_keys|map('extract', _powertools_repo_name)|select('defined')|first }}"
 
 _powertools_repo_file:
   RedHat: "{{ ansible_distribution }}-PowerTools.repo"
   Rocky: "{{ ansible_distribution }}-PowerTools.repo"
+  # Rocky >=9.0
+  Rocky_9: "{{ ansible_distribution|lower }}.repo"
   AlmaLinux_8: "almalinux-PowerTools.repo"
+  # Alma >=8.5
+  AlmaLinux_8_5: "almalinux-powertools.repo"
   AlmaLinux_9: "almalinux-crb.repo"
   CentOS: "{{ ansible_distribution }}-{{ ansible_distribution_release }}-PowerTools.repo"
 
-powertools_repo_file: "{{ _powertools_repo_file[ansible_distribution ~ '_' ~ ansible_distribution_major_version] | default(
-                          _powertools_repo_file[ansible_distribution] ) | default(
-                          _powertools_repo_file[ansible_os_family] ) }}"
+powertools_repo_file: "{{ _powertools_os_keys|map('extract', _powertools_repo_file)|select('defined')|first }}"
+
+powertools_repo_enabled: '{{ (ansible_distribution in [ "CentOS", "EL", "Rocky", "AlmaLinux" ]) and
+                             (ansible_distribution_major_version|int >= 8) }}'

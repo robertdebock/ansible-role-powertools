@@ -12,8 +12,24 @@ molecule:
     - if: $CI_COMMIT_REF_NAME == "master"
   parallel:
     matrix:
-      - image: "enterpriselinux"
+      - namespace: robertdebock
+        image: "enterpriselinux"
         tag: "8"
+      - namespace: robertdebock
+        image: "enterpriselinux"
+        tag: "9"
+      - namespace: library
+        image: "rockylinux"
+        tag: "8"
+      - namespace: library
+        image: "rockylinux"
+        tag: "9"
+      - namespace: library
+        image: "almalinux"
+        tag: "8"
+      - namespace: library
+        image: "almalinux"
+        tag: "9"
 
 galaxy:
   script:
